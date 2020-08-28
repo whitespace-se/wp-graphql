@@ -1,38 +1,36 @@
-const TurndownService = require('turndown');
+const TurndownService = require("turndown")
 
-exports.createPages = async ({actions, graphql, reporter}) => {
-    const result = await graphql(`
-        {
-          allWpDocument {
-            nodes {
-              id
-              uri
-            }
-          }
+exports.createPages = async ({ actions, graphql, reporter }) => {
+  const result = await graphql(`
+    {
+      allWpDocument {
+        nodes {
+          id
+          uri
         }
-    `)
-
-    if (result.errors) {
-        reporter.error("There was an error fetching docs.", result.errors)
+      }
     }
+  `)
 
-    const {nodes} = result.data.allWpDocument
+  if (result.errors) {
+    reporter.error("There was an error fetching docs.", result.errors)
+  }
 
-    if (nodes.length) {
-        nodes.forEach((doc) => {
-            actions.createPage({
-                path: doc.uri,
-                component: require.resolve(`./src/templates/docs/single-doc.js`),
-                context: {
-                    id: doc.id,
-                    uri: doc.uri
-                },
-            })
-        })
-    }
+  const { nodes } = result.data.allWpDocument
 
+  if (nodes.length) {
+    nodes.forEach((doc) => {
+      actions.createPage({
+        path: doc.uri,
+        component: require.resolve(`./src/templates/docs/single-doc.js`),
+        context: {
+          id: doc.id,
+          uri: doc.uri,
+        },
+      })
+    })
+  }
 }
-
 
 // SEE: https://www.shubho.dev/coding/wordpress-html-to-markdown-for-gatsby/
 // async function onCreateNode({

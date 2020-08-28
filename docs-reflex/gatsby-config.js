@@ -9,10 +9,10 @@ module.exports = {
   plugins: [
     `@reflexjs/gatsby-theme-base`,
     {
-        resolve: `gatsby-source-wordpress-experimental`,
-        options: {
-            url: `http://wpgqldocs.local/graphql`
-        },
+      resolve: `gatsby-source-wordpress-experimental`,
+      options: {
+        url: `http://wpgqldocs.local/graphql`,
+      },
     },
   ],
 }

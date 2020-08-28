@@ -4,9 +4,9 @@ import { Layout } from "@reflexjs/gatsby-theme-core"
 import { Doc } from "./doc"
 
 export default ({ data }) => (
-    <Layout pathname={data.doc.uri}>
-        <Doc {...data.doc} previousDoc={data.prev} nextDoc={data.next} />
-    </Layout>
+  <Layout pathname={data.doc.uri}>
+    <Doc {...data.doc} previousDoc={data.prev} nextDoc={data.next} />
+  </Layout>
 )
 
 export const query = graphql`
