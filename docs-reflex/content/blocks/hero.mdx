@@ -1,0 +1,15 @@
+export const HeroBlock = ({ heading, text }) => (
+  <Section p="4">
+    <Container>
+      <Grid col="1fr 250px" gap="8" alignItems="center">
+        <Div>
+          <H1 fontFamily="heading" color="primary">
+            {heading}
+          </H1>
+          <P mt="4">{text}</P>
+        </Div>
+        <Image src="placeholder.jpg" />
+      </Grid>
+    </Container>
+  </Section>
+)

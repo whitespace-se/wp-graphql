@@ -1,0 +1,76 @@
+export const DocsOverview = ({ ...props }) => (
+<>
+  <Section backgroundColor="muted" py="8|12|16|24" >
+    <Container>
+      <H2 m="0" lineHeight="tight" textAlign="center">
+        Learn WPGraphQL
+      </H2>
+      <P fontSize="xl|2xl" mt="2" textAlign="center">
+        Learn all the ins and outs of using GraphQL with WordPress
+      </P>
+    </Container>
+  </Section>
+<Section pt="0" pb="20" {...props}>
+  <Container>
+      <Grid col="1|2|3" mt="8|10|12" gap="4|6|8">
+        <DocFeature
+          icon="book"
+          heading="Getting Started"
+          description="Get up and running with WPGraphQL in 5 minutes"
+        />
+        <DocFeature
+          icon="users"
+          heading="Consulting"
+          description="Mauris blandit aliquet elit, eget tincidunt nibh pulvinar."
+        />
+        <DocFeature
+          icon="trending-up"
+          heading="Analysis"
+          description="Mauris blandit aliquet elit, eget tincidunt nibh pulvinar."
+        />
+        <DocFeature
+          icon="bar-chart-2"
+          heading="Business Planning"
+          description="Mauris blandit aliquet elit, eget tincidunt nibh pulvinar."
+        />
+        <DocFeature
+          icon="code"
+          heading="Development"
+          description="Mauris blandit aliquet elit, eget tincidunt nibh pulvinar."
+        />
+        <DocFeature
+          icon="activity"
+          heading="Lifetime support"
+          description="Mauris blandit aliquet elit, eget tincidunt nibh pulvinar."
+        />
+      </Grid>
+    </Container>
+  </Section>
+  </>
+)
+
+export const DocFeature = ({ icon, heading, description, ...props }) => (
+  <Flexbox
+    flexDirection="column"
+    textAlign="center"
+    borderWidth="1px"
+    rounded="lg"
+    p="4|6|8"
+    {...props}
+  >
+    <Flexbox
+      bg="primary"
+      color="white"
+      rounded="full"
+      size="16"
+      alignItems="center"
+      justifyContent="center"
+    >
+      <Icon name={icon} size="8" />
+    </Flexbox>
+    <H3 fontSize="2xl" mt="4|6" mb="0">
+      {heading}
+    </H3>
+    <P mb="0">{description}</P>
+  </Flexbox>
+)
