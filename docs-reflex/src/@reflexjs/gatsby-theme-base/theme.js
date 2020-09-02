@@ -56,4 +56,29 @@ export default {
     highlight: "#243E73",
     file: "#92B5B2",
   },
+    figure: {
+        color: '#777',
+        fontSize: 14,
+        textAlign: 'center',
+        width: 'calc(6 * (100vw / 17) - 28px)',
+        figcaption: {
+          padding: 5
+        }
+    },
+    div: {
+        '.wp-block-columns': {
+            flexWrap: 'nowrap',
+            display: 'flex',
+            maxWidth: `calc(6 * (100vw / 12) - 15px)`,
+        },
+        '.wp-block-column': {
+          flexBasis: 0,
+            flexGrow: 1,
+            minWidth: 0,
+            wordBreak: `break-word`,
+            overflowWrap: `break-word`,
+            display: 'block'
+        }
+    }
+
 }

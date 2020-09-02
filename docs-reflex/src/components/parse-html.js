@@ -1,6 +1,7 @@
 import React from "react"
 import ReactHtmlParser from "react-html-parser"
 import * as ReflexComponents from "@reflexjs/components"
+import * as DocsComponents from "./index"
 
 const formatStringToCamelCase = (str) => {
   const splitted = str.split("-")
@@ -83,4 +84,4 @@ export const ParseHtmlToReact = (html, components) => {
 }
 
 export const ParseHtmlToReflex = (html, overrideComponents) =>
-  ParseHtmlToReact(html, { ...ReflexComponents, ...overrideComponents })
+  ParseHtmlToReact(html, { ...ReflexComponents, ...DocsComponents, ...overrideComponents })
