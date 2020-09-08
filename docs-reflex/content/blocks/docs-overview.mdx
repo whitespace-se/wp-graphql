@@ -17,31 +17,37 @@ export const DocsOverview = ({ ...props }) => (
           icon="book"
           heading="Getting Started"
           description="Get up and running with WPGraphQL in 5 minutes"
+          link="/docs/introduction"
         />
         <DocFeature
           icon="users"
-          heading="Consulting"
+          heading="Beginner Guides"
           description="Mauris blandit aliquet elit, eget tincidunt nibh pulvinar."
+          link="/docs/beginner-guides"
         />
         <DocFeature
           icon="trending-up"
-          heading="Analysis"
-          description="Mauris blandit aliquet elit, eget tincidunt nibh pulvinar."
+          heading="GraphQL Concepts"
+          description="Learn more about GraphQL."
+          link="/docs/graphql-concepts"
         />
         <DocFeature
           icon="bar-chart-2"
-          heading="Business Planning"
-          description="Mauris blandit aliquet elit, eget tincidunt nibh pulvinar."
+          heading="WPGraphQL Concepts"
+          description="Learn more about how WPGraphQL brings GraphQL to WordPress."
+          link="/docs/wpgraphql-concepts"
         />
         <DocFeature
           icon="code"
-          heading="Development"
-          description="Mauris blandit aliquet elit, eget tincidunt nibh pulvinar."
+          heading="Community"
+          description="Get connected with the WPGraphQL community."
+          link="/docs/community"
         />
         <DocFeature
           icon="activity"
-          heading="Lifetime support"
-          description="Mauris blandit aliquet elit, eget tincidunt nibh pulvinar."
+          heading="Developer Reference"
+          description="Learn how to make WPGraphQL work for you."
+          link="/docs/developer-reference"
         />
       </Grid>
     </Container>
@@ -72,5 +78,8 @@ export const DocFeature = ({ icon, heading, description, ...props }) => (
       {heading}
     </H3>
     <P mb="0">{description}</P>
+    <Link href={props.link ? props.link : '/'} variant="primary" mt="6" >
+        Learn More
+    </Link>
   </Flexbox>
 )

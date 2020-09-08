@@ -1,10 +1,12 @@
-require(`dotenv`).config()
+require("dotenv").config({
+    path: `.env.${process.env.NODE_ENV}`,
+})
 
 module.exports = {
   siteMetadata: {
     title: "WPGraphQL",
     description: "Documentation for WPGraphQL",
-    siteUrl: process.env.SITE_URL || "http://localhost:8000",
+    siteUrl: process.env.SITE_URL,
   },
   plugins: [
     `@reflexjs/gatsby-theme-base`,
