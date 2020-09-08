@@ -11,7 +11,7 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress-experimental`,
       options: {
-        url: `http://wpgqldocs.local/graphql`,
+        url: process.env.WPGRAPHQL_URL,
       },
     },
   ],
