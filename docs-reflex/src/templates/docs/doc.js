@@ -142,7 +142,7 @@ export const Doc = ({ title, excerpt, content, uri }) => {
                 </P>
               )}
 
-              {ParseHtmlToReflex(content)}
+              {content && ParseHtmlToReflex(content)}
 
               <Flexbox justifyContent="space-between" mt="10">
                 {prevDoc && prevDoc.url !== "#" && (
