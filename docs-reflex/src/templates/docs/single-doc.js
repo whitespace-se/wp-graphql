@@ -11,13 +11,13 @@ export default ({ data }) => (
 
 export const query = graphql`
   query($id: String, $prev: String, $next: String) {
-    doc: wpDocument(id: { eq: $id }) {
+    doc: wpContentNode(id: { eq: $id }) {
       ...DocFragment
     }
-    prev: wpDocument(id: { eq: $prev }) {
+    prev: wpContentNode(id: { eq: $prev }) {
       ...DocFragment
     }
-    next: wpDocument(id: { eq: $next }) {
+    next: wpContentNode(id: { eq: $next }) {
       ...DocFragment
     }
   }
