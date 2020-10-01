@@ -3,8 +3,12 @@ import { graphql } from "gatsby"
 export const fragment = graphql`
   fragment DocFragment on WpDocument {
     id
-    title
-    content
+    ...on WpNodeWithTitle {
+      title
+    }
+    ...on WpNodeWithContentEditor {
+      content
+    }
     uri
   }
 `
