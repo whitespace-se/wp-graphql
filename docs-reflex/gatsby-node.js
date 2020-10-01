@@ -33,7 +33,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   }
 
-    const result = await graphql(`
+    const functions = await graphql(`
     {
       allWpFunction {
         nodes {
@@ -44,11 +44,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   `)
 
-  if (result.errors) {
+  if (functions.errors) {
     reporter.error("There was an error fetching functions.", result.errors)
   }
 
-  const { nodes } = result.data.allWpFunction
+  const { nodes } = functions.data.allWpFunction
 
   if (nodes.length) {
     nodes.forEach((doc) => {
@@ -65,7 +65,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   }
   
-    const result = await graphql(`
+    const actions = await graphql(`
     {
       allWpAction {
         nodes {
@@ -76,11 +76,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   `)
 
-  if (result.errors) {
+  if (actions.errors) {
     reporter.error("There was an error fetching actions...", result.errors)
   }
 
-  const { nodes } = result.data.allWpAction
+  const { nodes } = actions.data.allWpAction
 
   if (nodes.length) {
     nodes.forEach((doc) => {
