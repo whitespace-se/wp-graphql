@@ -9,6 +9,8 @@ export const fragment = graphql`
     ...on WpNodeWithContentEditor {
       content
     }
-    uri
+    ...on WpNodeWithUri {
+      uri
+    }
   }
 `
