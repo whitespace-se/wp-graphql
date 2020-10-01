@@ -20,14 +20,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   if (nodes.length) {
     nodes.forEach((doc) => {
-      actions.createPage({
-        path: doc.uri,
-        component: require.resolve(`./src/templates/docs/single-doc.js`),
-        context: {
-          id: doc.id,
-          uri: doc.uri,
-        },
-      })
+      if (doc.uri.length) {
+        actions.createPage({
+          path: doc.uri,
+          component: require.resolve(`./src/templates/docs/single-doc.js`),
+          context: {
+            id: doc.id,
+            uri: doc.uri,
+          },
+        })
+      }
     })
   }
 }
