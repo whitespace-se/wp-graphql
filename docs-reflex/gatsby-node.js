@@ -16,7 +16,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     reporter.error("There was an error fetching docs.", result.errors)
   }
 
-  const { nodes } = result.data.allWpDocument
+  const { nodes } = result.data.allWpContentNode
 
   if (nodes.length) {
     nodes.forEach((doc) => {
