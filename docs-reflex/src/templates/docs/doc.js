@@ -87,7 +87,7 @@ export const Doc = ({ title, excerpt, content, uri }) => {
             boxShadow="lg"
             border="0"
             position="fixed"
-            top="55px"
+            top="54px"
             rounded="none"
             left="0"
             right="0"
