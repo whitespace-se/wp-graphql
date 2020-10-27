@@ -335,10 +335,9 @@ class TypeRegistry {
 		UpdateSettings::register_mutation();
 
 		$registered_page_templates = wp_get_theme()->get_post_templates();
+		$page_templates['default'] = 'Default';
 
 		if ( ! empty( $registered_page_templates ) && is_array( $registered_page_templates ) ) {
-
-			$page_templates['default'] = 'Default';
 			foreach ( $registered_page_templates as $post_type_templates ) {
 				foreach ( $post_type_templates as $file => $name ) {
 					$page_templates[ $file ] = $name;

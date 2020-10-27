@@ -12,19 +12,31 @@
     "preview": "gatsby build && gatsby serve"
   },
   "dependencies": {
-    "@reflexjs/gatsby-theme-base": "^0.3.7",
-    "@reflexjs/preset-base": "^0.3.0",
+    "@chakra-ui/core": "1.0.0",
+    "@emotion/core": "^10.0.35",
+    "@emotion/styled": "^10.0.27",
     "@theme-ui/match-media": "^0.3.1",
+    "emotion-theming": "^10.0.27",
     "framer-motion": "^2.6.0",
-    "gatsby": "^2.22.11",
-    "gatsby-source-wordpress-experimental": "^1.4.0",
+    "gatsby": "^2.24.87",
+    "gatsby-plugin-chakra-ui": "1.0.0",
+    "gatsby-plugin-react-helmet": "^3.1.3",
+    "gatsby-plugin-react-svg": "^3.0.0",
+    "gatsby-plugin-sharp": "^2.6.38",
+    "gatsby-source-filesystem": "^2.3.32",
+    "gatsby-source-wordpress-experimental": "^2.0.0",
+    "gatsby-transformer-sharp": "2.5.16",
+    "prism-react-renderer": "^1.1.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-helmet": "^5.2.1",
     "react-html-parser": "^2.0.2",
-    "theme-ui": "^0.3.1",
-    "turndown": "^6.0.0",
-    "turndown-plugin-gfm": "^1.0.2",
+    "react-icons": "^3.11.0",
+    "react-live": "2.2.2",
     "typeface-inter": "^3.12.0",
     "underscore": "^1.10.2"
+  },
+  "devDependencies": {
+    "prettier": "^2.1.2"
   }
 }

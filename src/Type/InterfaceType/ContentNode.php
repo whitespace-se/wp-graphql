@@ -1,4 +1,5 @@
 <?php
+
 namespace WPGraphQL\Type\InterfaceType;
 
 use GraphQL\Deferred;
@@ -127,6 +128,45 @@ class ContentNode {
 					'previewRevisionId'         => [
 						'type'        => 'ID',
 						'description' => __( 'Whether the object is a node in the preview state', 'wp-graphql' ),
+					],
+					'template'         => [
+						'description' => __( 'The template assigned to the node', 'wp-graphql' ),
+						'type'        => 'ContentTemplate',
+						'resolve'     => function( Post $post_object, $args, $context, $info ) use ( $type_registry ) {
+
+							$registered_templates = wp_get_theme()->get_post_templates();
+
+							$template = [
+								'__typename'   => 'DefaultTemplate',
+								'templateName' => ! empty( $template_name ) ? $template_name : 'Default',
+								'templateFile' => null,
+							];
+
+							if ( ! isset( $registered_templates[ $post_object->post_type ] ) ) {
+								return $template;
+							}
+
+							$set_template = get_post_meta( $post_object->ID, '_wp_page_template', true );
+
+							$template_name = get_page_template_slug( $post_object->ID );
+
+							$template = [
+								'__typename'   => 'DefaultTemplate',
+								'templateName' => ! empty( $template_name ) ? $template_name : 'Default',
+							];
+
+							if ( ! empty( $registered_templates[ $post_object->post_type ][ $set_template ] ) ) {
+								$name     = ucwords( $registered_templates[ $post_object->post_type ][ $set_template ] );
+								$name     = preg_replace( '/[^\w]/', '', $name );
+								$template = [
+									'__typename'   => $name . 'Template',
+									'templateName' => ucwords( $registered_templates[ $post_object->post_type ][ $set_template ] ),
+									'templateFile' => ! empty( $template_name ) ? $template_name : null,
+								];
+							}
+
+							return $template;
+						},
 					],
 				],
 			]
