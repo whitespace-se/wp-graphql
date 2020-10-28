@@ -33,7 +33,6 @@ import logoCreditKarma from '../img/logo-credit-karma.png'
 import logoPlayersTribune from '../img/logo-players-tribune.png'
 import logoZillow from '../img/logo-zillow.png'
 import logoGatsby from '../img/logo-gatsby.png'
-import logoNevernull from '../img/logo-nevernull.webp'
 
 const Testimonials = () => {
     const data = useStaticQuery(graphql`
@@ -207,8 +206,7 @@ const Home = () => {
                     />
                 </Container>
             </Box>
-            <Box width={`100%`} background={useColorModeValue(`white`, `gray.600`)}
-                 borderBottomWidth="1px">
+            <Box width={`100%`} background={useColorModeValue(`white`, `gray.600`)} >
                 <Container mt="0" pt="20" pb="20">
                     <Flex flexDirection="column" textAlign="center" align="center"
                           justify="space-between">
@@ -440,19 +438,6 @@ const Home = () => {
                                         </Tooltip>
                                     </Link>
                                 </WrapItem>
-                                <WrapItem key="NeverNull" bg="white" p="0" rounded="md">
-                                    <Link to={"https://www.NeverNull.com/"} target="_blank">
-                                        <Tooltip label="NeverNull" aria-label="NeverNull"
-                                                 placement="top">
-                                            <Image alt="NeverNull Logo"
-                                                   h="60px"
-                                                   w="auto"
-                                                   src={logoNevernull}
-                                                   loading="lazy"
-                                            />
-                                        </Tooltip>
-                                    </Link>
-                                </WrapItem>
                             </Wrap>
                         </Box>
                     </Flex>
@@ -462,7 +447,6 @@ const Home = () => {
             <Box
                 width={`100%`}
                 background={useColorModeValue(`gray.50`, `gray.700`)}
-                borderBottomWidth="1px"
             >
                 <Container mt="0">
                     <Flex flexDirection="column" textAlign="center" align="center"
@@ -472,6 +456,41 @@ const Home = () => {
                                 Loved by developers, like you.
                             </Heading>
                             <Testimonials/>
+                        </Box>
+                    </Flex>
+                </Container>
+            </Box>
+            <Box
+                width={`100%`}
+                background={useColorModeValue(`white`, `gray.600`)}
+                borderBottomWidth="1px"
+            >
+                <Container mt="0" mb="10" minHeight={0}>
+                    <Flex flexDirection="column" textAlign="center" align="center"
+                          justify="space-between">
+                        <Box maxW="900px" mt={`10`} mb={`10`}>
+                            <Heading as={`h2`} fontSize={`5xl`}>Start using WPGraphQL today!</Heading>
+                            <Stack
+                                mt="10"
+                                spacing="0"
+                                justify="center"
+                                direction={{base: "column", sm: "row"}}
+                            >
+                                <Link to="/docs/">
+                                    <Button as="span" colorScheme="blue" variant="solid"
+                                            maxW={`300px`} m={`3`} mb={`5`}
+                                            rightIcon={<FaArrowRight fontSize="0.8em"/>}>
+                                        Read the Docs
+                                    </Button>
+                                </Link>
+                                <Link to="https://wordpress.org/plugins/wp-graphql">
+                                    <Button as="span" colorScheme="orange" variant="solid"
+                                            maxW={`300px`} m={`3`} mb={`5`}
+                                            rightIcon={<FaWordpress fontSize="0.8em"/>}>
+                                        Download the Plugin
+                                    </Button>
+                                </Link>
+                            </Stack>
                         </Box>
                     </Flex>
                 </Container>

@@ -1,5 +1,5 @@
 import React from "react";
-import {chakra, Box, Button, Flex, HStack, useColorMode, useColorModeValue } from "@chakra-ui/core";
+import {chakra, Box, Button, Flex, HStack, useColorMode, useColorModeValue, Text } from "@chakra-ui/core";
 import {FaMoon, FaSun, FaGithub, FaWordpress, FaYoutube, FaSlack} from "react-icons/fa"
 import {Link} from 'gatsby'
 import Logo from "./logo";
@@ -76,11 +76,11 @@ function Layout(props) {
                 bg={bg}
                 left="0"
                 right="0"
-                borderBottomWidth="1px"
+                border="0"
                 width="full"
                 {...props}
             >
-                <chakra.div height="4.5rem" mx="auto" maxW="1200px">
+                <chakra.div border="0" height="6rem" mx="auto" maxW="1200px">
                     <Flex
                         w="100%"
                         h="100%"
@@ -88,8 +88,21 @@ function Layout(props) {
                         px={5}
                         align="center"
                         justify="space-around"
+                        border="0"
                     >
-                        <Flex maxW="720px" align="center" color="gray.400">
+                        <Text >Development sponsored by <Link  to={`https://gatsbyjs.com/`} target={`_blank`}><Text as={`span`} border="0" color={`blue.400`}>Gatsby</Text></Link></Text>
+                    </Flex>
+                    <Flex
+                        border="0"
+                        w="100%"
+                        h="100%"
+                        py={3}
+                        px={5}
+                        align="center"
+                        justify="space-around"
+                    >
+                        <Flex border="0" maxW="720px" align="center" color="gray.400">
+
                             <HStack spacing="5">
                                 <Button>
                                     <Link to="https://github.org/wp-graphql/wp-graphql">
