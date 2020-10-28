@@ -9,7 +9,7 @@ const Home = () => {
     return (
         <Layout>
             <Box width={`100%`} background={`gray.50`} borderBottomWidth="1px">
-                <Container>
+                <Container mt="0">
                     <Flex flexDirection="column" textAlign="center" align="center" justify="space-between">
                         <Box maxW="900px" mt={`30`}>
                             <Heading as={`h1`} m="0" mb="3" size="4xl">
