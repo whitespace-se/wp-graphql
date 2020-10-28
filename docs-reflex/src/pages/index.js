@@ -33,6 +33,7 @@ import logoCreditKarma from '../img/logo-credit-karma.png'
 import logoPlayersTribune from '../img/logo-players-tribune.png'
 import logoZillow from '../img/logo-zillow.png'
 import logoGatsby from '../img/logo-gatsby.png'
+import logoNevernull from '../img/logo-nevernull.webp'
 
 const Testimonials = () => {
     const data = useStaticQuery(graphql`
@@ -230,7 +231,7 @@ const Home = () => {
                                 spacing="24px"
                                 mt="20"
                             >
-                                <WrapItem key="dfuzr" bg="white" p="0">
+                                <WrapItem key="dfuzr" bg="#ee0d00" p="1" rounded="md">
 
                                     <Link to={"https://www.dfuzr.com/"} target="_blank">
                                         <Tooltip label="Dfuzr Industries: Digital Experience Agency"
@@ -245,7 +246,7 @@ const Home = () => {
                                     </Link>
 
                                 </WrapItem>
-                                <WrapItem key="funkhaus" bg="white" p="0">
+                                <WrapItem key="funkhaus" bg="white" p="1" rounded="md">
 
                                     <Link to={"https://funkhaus.us/"} target="_blank">
                                         <Tooltip label="Funkhaus: Digital Creative Agency"
@@ -260,7 +261,7 @@ const Home = () => {
                                     </Link>
 
                                 </WrapItem>
-                                <WrapItem key="Valu" bg="white" p="0">
+                                <WrapItem key="Valu" bg="#df2e30" p="1" rounded="md">
 
                                     <Link to={"https://www.valu.fi/en"} target="_blank">
                                         <Tooltip label="Valu Digital" aria-label="Valu Digital Logo"
@@ -410,7 +411,7 @@ const Home = () => {
                                     </Link>
 
                                 </WrapItem>
-                                <WrapItem key="The Players Tribune" bg="white" p="2">
+                                <WrapItem key="The Players Tribune" bg="white" p="2" rounded="md">
                                     <Link to={"https://www.theplayerstribune.com/"} target="_blank">
                                         <Tooltip label="The Players Tribune"
                                                  aria-label="The Players Tribune"
@@ -426,11 +427,10 @@ const Home = () => {
                                     </Link>
 
                                 </WrapItem>
-                                <WrapItem key="Zillow" bg="transparent" p="0">
+                                <WrapItem key="Zillow" bg="white" p="1" rounded="md">
                                     <Link to={"https://www.zillow.com/"} target="_blank">
                                         <Tooltip label="Zillow" aria-label="Zillow"
                                                  placement="top">
-
                                             <Image alt="Zillow Logo"
                                                    h="60px"
                                                    w="auto"
@@ -439,7 +439,19 @@ const Home = () => {
                                             />
                                         </Tooltip>
                                     </Link>
-
+                                </WrapItem>
+                                <WrapItem key="NeverNull" bg="white" p="0" rounded="md">
+                                    <Link to={"https://www.NeverNull.com/"} target="_blank">
+                                        <Tooltip label="NeverNull" aria-label="NeverNull"
+                                                 placement="top">
+                                            <Image alt="NeverNull Logo"
+                                                   h="60px"
+                                                   w="auto"
+                                                   src={logoNevernull}
+                                                   loading="lazy"
+                                            />
+                                        </Tooltip>
+                                    </Link>
                                 </WrapItem>
                             </Wrap>
                         </Box>
@@ -447,8 +459,11 @@ const Home = () => {
 
                 </Container>
             </Box>
-            <Box width={`100%`} background={useColorModeValue(`gray.50`, `gray.700`)}
-                 borderBottomWidth="1px">
+            <Box
+                width={`100%`}
+                background={useColorModeValue(`gray.50`, `gray.700`)}
+                borderBottomWidth="1px"
+            >
                 <Container mt="0">
                     <Flex flexDirection="column" textAlign="center" align="center"
                           justify="space-between">
